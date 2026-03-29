@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Offline AI Chatbot</title>
+  <link rel="stylesheet" href="login.css">
+ 
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+      <h2>🧠 Offline AI Chatbot</h2>
+      <p class="subtitle">Login to continue</p>
+
+      <form onsubmit="login(event)">
+        <div class="input-group">
+          <input type="text" id="username" required>
+          <label>Username</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" required>
+          <label>Password</label>
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p class="error" id="errorMsg"></p>
+    </div>
+  </div>
+
+  <!-- ✅ CONNECT JS FILE -->
+  <script src="login.js"></script>
+
+</body>
+</html>
