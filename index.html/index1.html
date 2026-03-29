@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyMind AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="style.css">
+<script>
+if (localStorage.getItem("loggedIn") !== "true") {
+  window.location.href = "login.html";
+}
+</script>
+<body>
+<header>
+  <div class="logo">
+    <div class="logo-icon">🧠</div>
+    <div class="logo-text">Study<span>World</span> AI</div>
+  </div>
+  <div class="header-tags">
+    <div class="tag tag-offline">OFFLINE AI CHATBOT</div>
+  
+  </div>
+  <div class=""></div>
+</header>
+
+<div class="topic-bar" id="topicBar">
+  <div class="topic-pill active" onclick="selectTopic(this, 'General')">📚 All Topics</div>
+  <div class="topic-pill" onclick="selectTopic(this, 'Math')">📐 Mathematics</div>
+  <div class="topic-pill" onclick="selectTopic(this, 'Science')">🔬 Science</div>
+  <div class="topic-pill" onclick="selectTopic(this, 'English')">📝 English</div>
+  <div class="topic-pill" onclick="selectTopic(this, 'Computer')">💻 Computer</div>
+</div>
+
+<div id="chat">
+  <div class="welcome-card">
+    <div class="icon">🎓</div>
+    <h2>Welcome to StudyWorld AI!</h2>
+    <p>Ask me anything about your studies — math formulas, science concepts,  grammar rules, and more. No internet required!</p>
+    <div class="suggestions">
+      <button class="suggestion-btn" onclick="quickAsk('What are the mathematical operations?')">Mathematical Operations</button>
+      <button class="suggestion-btn" onclick="quickAsk('What is the Pythagorean theorem?')">Pythagorean theorem</button>
+      <button class="suggestion-btn" onclick="quickAsk('Explain Newton\'s laws of motion')">Newton's Laws</button>
+      <button class="suggestion-btn" onclick="quickAsk('What are the divisions in Science?')">Divisions in Science</button>
+      <button class="suggestion-btn" onclick="quickAsk('Explanation about the English Language?')">English Language</button>
+      <button class="suggestion-btn" onclick="quickAsk('What are parts of speech?')">Parts of Speech</button>
+      <button class="suggestion-btn" onclick="quickAsk('What are the Programming Languages?')">Programming Languages</button>
+      <button class="suggestion-btn" onclick="quickAsk('Explain binary numbers')">Binary Numbers</button>
+    </div>
+  </div>
+</div>
+
+<div class="input-area">
+  <div class="input-row">
+    <textarea id="userInput" placeholder="Ask any study question..." rows="1"></textarea>
+    <button id="sendBtn" onclick="sendMessage()">➤</button>
+  </div>
+  <div class="input-hint">SHIFT+ENTER for new line · ENTER to send · Works offline</div>
+</div>
+<script src="script.js"></script>
+<button onclick="logout()">Logout</button>
+<script>
+function logout() {
+  localStorage.removeItem("loggedIn");
+  window.location.href = "login.html";
+}
+</script>
+</body>
+</html>
